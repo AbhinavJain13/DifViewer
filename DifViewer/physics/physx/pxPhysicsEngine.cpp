@@ -89,7 +89,7 @@ void PxPhysicsEngine::destroy() {
 void PxPhysicsEngine::simulate(F32 delta) {
 	if (getRunning()) {
 		scene->simulate(delta);
-		scene->fetchResults();
+		scene->fetchResults(true);
 	}
 }
 

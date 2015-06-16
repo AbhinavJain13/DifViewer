@@ -74,3 +74,17 @@ void PxPhysicsBody::applyForce(const Point3F &force, const Point3F &origin) {
 bool PxPhysicsBody::getDynamic() {
 	return mActor->is<physx::PxRigidDynamic>();
 }
+
+void PxPhysicsBody::setVelocity(const Point3F &velocity) {
+    if (getDynamic()) {
+        physx::PxRigidDynamic *dyn = mActor->is<physx::PxRigidDynamic>();
+        dyn->setLinearVelocity(pxConvert(velocity));
+    }
+}
+
+void PxPhysicsBody::setAngularVelocity(const Point3F &velocity) {
+    if (getDynamic()) {
+        physx::PxRigidDynamic *dyn = mActor->is<physx::PxRigidDynamic>();
+        dyn->setAngularVelocity(pxConvert(velocity));
+    }
+}

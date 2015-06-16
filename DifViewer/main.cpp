@@ -34,7 +34,7 @@
 #include "SDLWindow.h"
 #include "scene.h"
 
-#include "btPhysicsEngine.h"
+#include "pxPhysicsEngine.h"
 
 
 int main(int argc, const char * argv[])
@@ -46,7 +46,7 @@ int main(int argc, const char * argv[])
 	}
 
 #ifdef BUILD_PHYSICS
-	PhysicsEngine::setEngine(new btPhysicsEngine());
+	PhysicsEngine::setEngine(new PxPhysicsEngine());
 #endif
 
 	U32 argstart = 1;

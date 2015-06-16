@@ -40,6 +40,12 @@ PxPhysicsSphere::PxPhysicsSphere(F32 radius) {
 		physx::PxRigidBodyExt::setMassAndUpdateInertia(*rigid, 1.0f);
 		rigid->setRigidBodyFlag(physx::PxRigidBodyFlag::eENABLE_CCD, true);
 	}
+    
+    // max roll velocity the marble can roll.
+    physx::PxRigidDynamic *actor = mActor->is<physx::PxRigidDynamic>();
+    if (actor) {
+        actor->setMaxAngularVelocity(100.0f);
+    }
 }
 
 bool PxPhysicsSphere::getColliding() {

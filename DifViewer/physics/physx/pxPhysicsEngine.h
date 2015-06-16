@@ -30,8 +30,8 @@
 
 #include "physicsEngine.h"
 
-#include "PxPhysicsAPI.h"
-#include "cooking/PxCooking.h"
+#include <PxPhysicsAPI.h>
+#include <cooking/PxCooking.h>
 
 class PxPhysicsEngine : public PhysicsEngine {
 	physx::PxFoundation *foundation;

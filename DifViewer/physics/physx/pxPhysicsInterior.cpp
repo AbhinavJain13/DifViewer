@@ -31,6 +31,7 @@
 PxPhysicsInterior::PxPhysicsInterior(Interior *interior) : PxPhysicsBody(), mInterior(interior) {
 	construct();
 }
+
 void PxPhysicsInterior::construct() {
 	//Create body
 	physx::PxTriangleMeshGeometry geometry;
